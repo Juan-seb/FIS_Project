@@ -15,11 +15,35 @@ const filtersArray = {
   }
 }
 
+const sections = [
+  {
+    name:'Communities & collections',
+    path: 'community'
+  },
+  {
+    name:'Issue Date',
+    path: 'date'
+  },
+  {
+    name:'Authors',
+    path: 'authors'
+  },
+  {
+    name:'Titles',
+    path: 'titles'
+  },
+  {
+    name:'Subject',
+    path: 'subject'
+  },
+  
+]
+
 const FilterProvider = ({ children }) => {
 
   const [filters, setFilters] = useState(filtersArray)
 
-  const data = { filters, setFilters }
+  const data = { filters, setFilters, sections }
   return (
     <FilterContext.Provider value={data}>
       {children}

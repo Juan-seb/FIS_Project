@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
             height={69}
             priority={false}
             alt="Logo UD"
-            className="hidden"
           />
         </div>
         <h2 className='text-2xl text-slate-50 font-semibold px-2'>Repositorio Universidad Distrital.</h2>
