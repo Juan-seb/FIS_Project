@@ -2,20 +2,52 @@ import { useState, createContext } from 'react'
 
 const FilterContext = createContext()
 
-const filtersArray = {
-  keyword: {
-    title: "Palabra clave",
-    display: true,
-    value: null
+const filtersArray = [
+  {
+    name:'keyword',
+    description: 'Palabra clave',
+    inOptionFilter:true,
+    inForm: false,
+    type: 'text',
   },
-  autor: {
-    title: "Autor",
-    display: false,
-    value: null
-  }
-}
+  {
+    name:'author',
+    description: 'Autor',
+    inOptionFilter:true,
+    inForm: false,
+    type: 'text',
+  },
+  {
+    name:'topic',
+    description: 'Tema',
+    inOptionFilter:true,
+    inForm: false,
+    type: 'text',
+  },
+  {
+    name:'subject',
+    description: 'Materia en especifico',
+    inOptionFilter:true,
+    inForm: false,
+    type: 'text',
+  },
+  {
+    name:'date',
+    description: 'Fecha',
+    inOptionFilter:true,
+    inForm: false,
+    type: 'date',
+  },
+  {
+    name:'colection',
+    description: 'Colección',
+    inOptionFilter:true,
+    inForm: false,
+    type: 'text',
+  },
+]
 
-const sections = [
+const sectionArray = [
   {
     name:'Communities & collections',
     path: 'community'
@@ -42,8 +74,9 @@ const sections = [
 const FilterProvider = ({ children }) => {
 
   const [filters, setFilters] = useState(filtersArray)
+  const [sections, setSections] = useState(sectionArray)
 
-  const data = { filters, setFilters, sections }
+  const data = { filters, setFilters, sections, setSections }
   return (
     <FilterContext.Provider value={data}>
       {children}

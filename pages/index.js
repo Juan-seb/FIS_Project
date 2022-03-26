@@ -34,7 +34,7 @@ export default function Home() {
           <h1 className="text-2xl text-black mx-1 text-center font-semibold mb-2 hover:-2">
             Repositorio Institucional Universidad Distrital - Proyecto FIS
           </h1>
-          <p className="text-base text-black font-thin mb-2">
+          <p className="text-base text-black font-thin mb-4">
             El Repositorio Institucional de la Universidad Francisco José de Caldas RIUD es una herramienta donde
             se depositan los objetos digitales que corresponden a la producción intelectual de la Universidad para proteger,
             preservar, y difundir.
@@ -42,7 +42,7 @@ export default function Home() {
           <p className="text-base text-black font-semibold w-full mb-2">
             Puedes buscar información por:
           </p>
-          <nav className="flex flex-wrap justify-center w-full mb-2">
+          <nav className="flex flex-wrap justify-center w-full mb-4">
             {
               sections.map((section, index) => (
                 <Link href={`/browse/${section.path}`} key={index}>
@@ -52,16 +52,16 @@ export default function Home() {
             }
           </nav>
           <p className="text-base text-black font-semibold w-full mb-2">
-            Puedes buscar aqui:
+            Puedes buscar aqui si tienes el titulo:
           </p>
-          <div className="w-full h-12 flex items-center justify-center mb-2">
+          <div className="w-full h-12 flex items-center justify-center mb-4">
             <input 
               type="text" 
               onChange={handleInput} 
               value={search} 
-              className="w-60 h-10 px-2 outline-none border border-r-0 rounded-l-md" 
+              className="w-4/5 h-10 px-2 outline-red-300 shadow-outline border border-r-0 rounded-l-md" 
             />
-            <button className="px-2 border rounded-r-md h-10" onClick={handleClick}>🔍</button>
+            <button className="px-2 border rounded-r-md h-10" onClick={handleClick}>Buscar</button>
           </div>
           <Link href="/browse" passHref className="w-full">
             <div className="w-full cursor-pointer">

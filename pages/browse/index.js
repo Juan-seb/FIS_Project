@@ -1,23 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Layout from "components/Layout"
+import FilterSearch from 'components/FilterSearch'
+import PreviewData from 'components/PreviewData'
+
 
 const Browse = () => {
 
-  const [wordToSearch, setWordToSearch] = useState('')
+  const [dataResponse, setDataResponse] = useState(null)
 
-  useEffect(() => {
-    
-    let word = localStorage.getItem('search')
-    word && setWordToSearch(word)
-
-  }, [])
+  const handleSubmit = (e, data) => {
+    e.preventDefault()
+    console.log("hola")
+  }
 
   return (
     <section className="flex-1 px-4 my-4">
-      <h1 className="text-2xl font-semibold">
-        Customized Search
-      </h1>
-      <hr />
+      {/* Add the filters of the request */}
+      <FilterSearch
+        handleSubmit={handleSubmit}
+      />
+      {/* Add the results of the request */}
+      <PreviewData
+        dataResponse={dataResponse}
+      />
     </section>
   )
 }
