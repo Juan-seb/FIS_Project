@@ -7,16 +7,21 @@ const FilterSearch = ({ handleSubmit }) => {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse()
   const { filters, setFilters } = useContext(FilterContext)
   const [dataForm, setDataForm] = useState(null)
-  const [wordToSearch, setWordToSearch] = useState('')
 
   useEffect(() => {
 
-    let word = localStorage.getItem('search')
-    word && setWordToSearch(word)
+    /* const dataFilters = [...filters].map(filter => {
+      return {
+        ...filter,
+        inForm: false
+      }
+    }) */
+    
+    let data = {
+      generalSearch: localStorage.getItem('search')
+    }
 
-    let data = {}
-
-    filters.map(filter => {
+    filters.forEach(filter => {
       data = {
         ...data,
         [filter.name]: ''
@@ -25,13 +30,16 @@ const FilterSearch = ({ handleSubmit }) => {
 
     setDataForm(data)
 
+    /* return () => setFilters(dataFilters) */
+
   }, [])
 
+
   const handleChangeFilters = (e, index) => {
-    let copyOfFilters = filters
+    let copyOfFilters = [...filters]
     copyOfFilters[index]['inForm'] = e.target.checked
 
-    setFilters([...copyOfFilters])
+    setFilters(copyOfFilters)
   }
 
   const handleChangeForm = (e) => {
@@ -65,6 +73,7 @@ const FilterSearch = ({ handleSubmit }) => {
                   name={filter}
                   onChange={(e) => handleChangeFilters(e, index)}
                   className="mr-2"
+                  checked={filter.inForm}
                 />
                 {filter?.description}
               </label>
@@ -74,29 +83,42 @@ const FilterSearch = ({ handleSubmit }) => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-wrap justify-start"
+        className="flex flex-wrap justify-start p-2 mb-4 rounded-lg bg-gray-300"
       >
         {
           filters?.map((filter, index) => (
 
             filter.inForm &&
-            <div key={index} className="w-[450px] sm:w-[500px]">
-              <p className="inline">{filter.description}:</p>
+            <div key={index} className="flex-grow w-full h-min mb-2 md:mr-2 md:w-2/5">
+              <p className="inline mb-1">
+                {filter.description}:
+              </p>
               <input
                 type={filter.type}
                 onChange={handleChangeForm}
                 name={filter.name}
-                value={dataForm[filter.name]}
-                className="inline"
+                value={dataForm?.[filter.name]}
+                className="block outline-none w-full h-8 pl-2 rounded-md focus:border-gray-500"
               />
             </div>
           ))
         }
-        <button>Enviar</button>
+        <div className="w-full h-min mb-2">
+          <p className="inline mb-1">
+            Palabra general:
+          </p>
+          <input
+            type="text"
+            onChange={handleChangeForm}
+            name="generalSearch"
+            value={dataForm?.generalSearch}
+            className="block outline-none w-full h-8 pl-2 mb-2 rounded-md focus:ring-2 focus:ring-gray-500"
+          />
+        </div>
+        <button className="w-24 h-8 rounded-md bg-red-700 text-white">Buscar</button>
       </form>
     </article>
   )
-
 }
 
 export default FilterSearch

@@ -1,6 +1,11 @@
-const BySpecificFilter = (Component) => {
+const BySpecificFilter = (Component, route) => {
+
+  console.log(route)
   
-  const SpecificFilter = ({...props}) => {
+  const SpecificFilter = ({filter,...props}) => {
+
+    console.log(filter)
+
     return (
       <Component {...props} />
     )

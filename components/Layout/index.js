@@ -1,21 +1,18 @@
-import Image from 'next/image'
-import logoUD from 'public/logoUD.png'
+import EscudoUD from 'components/Icons/EscudoUD'
+import Link from 'next/link'
 
 const Layout = ({ children }) => {
 
   return (
     <main className="flex flex-col h-screen">
-      <header className="flex justify-start items-center w-full h-24 bg-red-800 p-2">
+      <header className="flex justify-start items-center w-full h-min bg-red-800 p-2">
         <div className="w-20 border-r hidden sm:block">
-          <Image
-            src={logoUD}
-            width={80}
-            height={69}
-            priority={false}
-            alt="Logo UD"
-          />
+          <EscudoUD width={50} height={77}/>
         </div>
         <h2 className='text-2xl text-slate-50 font-semibold px-2'>Repositorio Universidad Distrital.</h2>
+        <Link href="/login" passHref>
+          <h3 className="flex-grow mr-2 text-base text-slate-50 font-thin text-right cursor-pointer">Admin login</h3>
+        </Link>
       </header>
       {children}
       <footer className="w-full h-min p-4 bg-red-800">

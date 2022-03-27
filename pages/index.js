@@ -21,6 +21,11 @@ export default function Home() {
     router.push('/browse')
   }
 
+  const handleClickWithoutSearch = () => {
+    localStorage.removeItem('search')
+    router.push('/browse')
+  }
+
   return (
     <>
       <Head>
@@ -55,19 +60,17 @@ export default function Home() {
             Puedes buscar aqui si tienes el titulo:
           </p>
           <div className="w-full h-12 flex items-center justify-center mb-4">
-            <input 
-              type="text" 
-              onChange={handleInput} 
-              value={search} 
-              className="w-4/5 h-10 px-2 outline-red-300 shadow-outline border border-r-0 rounded-l-md" 
+            <input
+              type="text"
+              onChange={handleInput}
+              value={search}
+              className="w-4/5 h-10 px-2 border border-gray-400 border-r-0 rounded-l-md outline-red-300 shadow-outline "
             />
-            <button className="px-2 border rounded-r-md h-10" onClick={handleClick}>Buscar</button>
+            <button className="px-2 border border-gray-400 rounded-r-md h-10" onClick={handleClick}>Buscar</button>
           </div>
-          <Link href="/browse" passHref className="w-full">
-            <div className="w-full cursor-pointer">
-              <a className="underline text-left">Click aqui para una busqueda personalizada</a>
-            </div>
-          </Link>
+          <div onClick={handleClickWithoutSearch} className="w-full cursor-pointer">
+            <a className="underline text-left">Click aqui para una busqueda personalizada</a>
+          </div>
         </article>
       </section>
     </>

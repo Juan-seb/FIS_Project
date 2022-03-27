@@ -1,11 +1,11 @@
-const FilterData = ({filter}) => {
+import useCollapse from 'react-collapsed'
 
-  console.log(filter)
+const FilterData = ({ filter }) => {
 
   return (
-    <>
-      Hola, estamos en los datos por filtro especifico
-    </>
+    <section className="flex-1">
+      hola
+    </section>
   )
 }
 

@@ -7,7 +7,7 @@ import PreviewData from 'components/PreviewData'
 const Browse = () => {
 
   const [dataResponse, setDataResponse] = useState(null)
-
+  
   const handleSubmit = (e, data) => {
     e.preventDefault()
     console.log("hola")
