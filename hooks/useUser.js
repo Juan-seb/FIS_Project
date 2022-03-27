@@ -13,7 +13,9 @@ const useUser = () => {
   const router = useRouter()
 
   useEffect(() => {
-    stateUserChange(setUser)
+    const unsubscribe = stateUserChange(setUser)
+
+    return () => unsubscribe.then(res => res())
   }, [])
 
   useEffect(() => {

@@ -26,7 +26,7 @@ const signIn = async () => {
 
 const stateUserChange = async (setState) => {
   try {
-    await auth.onAuthStateChanged(user => {
+    const userChange = await auth.onAuthStateChanged(user => {
       if (user?.emailVerified && user?.email.endsWith('@correo.udistrital.edu.co')) {
         setState(user)
       } else {
@@ -35,8 +35,10 @@ const stateUserChange = async (setState) => {
         })
       }
     })
+
+    return userChange
   } catch (error) {
-    
+
   }
 }
 

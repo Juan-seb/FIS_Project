@@ -1,20 +1,19 @@
-import { useState } from 'react'
 import LayoutAdmin from "components/LayoutAdmin"
-import useUser from "hooks/useUser"
-import Content from 'components/LayoutAdmin/Content'
+import Content from "components/LayoutAdmin/Content"
+import useUser from 'hooks/useUser'
 
-const Admin = () => {
+const RequestAuthors = () => {
 
   useUser()
 
-  return (
+  return(
     <div className="w-full h-[calc(100vh-68px)] px-2 py-2 overflow-y-scroll">
-      Hola
+      Authors
     </div>
   )
 }
 
-Admin.getLayout = (page) => {
+RequestAuthors.getLayout = (page) => {
   return (
     <LayoutAdmin>
       <Content>
@@ -24,4 +23,4 @@ Admin.getLayout = (page) => {
   )
 }
 
-export default Admin
+export default RequestAuthors

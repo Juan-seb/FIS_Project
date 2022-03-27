@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { signIn, stateUserChange } from "@fbs/client"
 import { useRouter } from 'next/router'
 import Google from "components/Icons/Google"
-import LayoutAdmin from "components/Layout/LayoutAdmin"
+import LayoutAdmin from "components/LayoutAdmin"
 import useUser, { USER_STATES } from 'hooks/useUser'
 
 
@@ -24,7 +24,7 @@ const Login = () => {
       <p className="mb-2 text-lg text-center text-black text-thin">Ingresa con tu cuenta institucional.</p>
       {
         user === USER_STATES.NOT_KNOWN &&
-        <p>Comprobando....</p>
+        <p className="w-full text-center">Comprobando....</p>
       }
       {
         user === USER_STATES.NOT_LOGIN &&
