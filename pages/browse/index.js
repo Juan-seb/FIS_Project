@@ -3,7 +3,6 @@ import Layout from "components/Layout"
 import FilterSearch from 'components/FilterSearch'
 import PreviewData from 'components/PreviewData'
 
-
 const Browse = () => {
 
   const [dataResponse, setDataResponse] = useState(null)

@@ -2,33 +2,25 @@ import { useState, useEffect, useContext } from 'react'
 import useCollapse from 'react-collapsed'
 import FilterContext from 'context/FilterContext'
 
+const data = {
+  title: () => localStorage.getItem('search')
+}
+
 const FilterSearch = ({ handleSubmit }) => {
 
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse()
   const { filters, setFilters } = useContext(FilterContext)
-  const [dataForm, setDataForm] = useState(null)
+  const [dataForm, setDataForm] = useState(data)
+
 
   useEffect(() => {
 
-    /* const dataFilters = [...filters].map(filter => {
-      return {
-        ...filter,
-        inForm: false
-      }
-    }) */
-    
-    let data = {
-      generalSearch: localStorage.getItem('search')
-    }
-
     filters.forEach(filter => {
-      data = {
-        ...data,
+      setDataForm({
+        ...dataForm,
         [filter.name]: ''
-      }
-    })
-
-    setDataForm(data)
+      })
+    })    
 
     /* return () => setFilters(dataFilters) */
 
@@ -61,24 +53,26 @@ const FilterSearch = ({ handleSubmit }) => {
       >
         {isExpanded ? "Filtros - Todos los filtros" : "Filtros - Click para mostrar los filtros"}
       </div>
-      <div {...getCollapseProps()}>
+      <div {...getCollapseProps()} >
         <div className="w-full !max-h-min mx-auto p-2 mb-4 rounded-lg bg-gray-300">
           <p>Selecciona el filtro por el cualquier quieres buscar</p>
-          {
-            filters?.map((filter, index) => (
-              filter?.inOptionFilter &&
-              <label key={index} className="block w-full h-6">
-                <input
-                  type="checkbox"
-                  name={filter}
-                  onChange={(e) => handleChangeFilters(e, index)}
-                  className="mr-2"
-                  checked={filter.inForm}
-                />
-                {filter?.description}
-              </label>
-            ))
-          }
+          <div className="flex flex-wrap">
+            {
+              filters?.map((filter, index) => (
+                filter?.inOptionFilter &&
+                <label key={index} className="block w-80 h-6">
+                  <input
+                    type="checkbox"
+                    name={filter}
+                    onChange={(e) => handleChangeFilters(e, index)}
+                    className="mr-2"
+                    checked={filter.inForm}
+                  />
+                  {filter?.description}
+                </label>
+              ))
+            }
+          </div>
         </div>
       </div>
       <form
@@ -104,15 +98,15 @@ const FilterSearch = ({ handleSubmit }) => {
           ))
         }
         <div className="w-full h-min mb-2">
-          <p className="inline mb-1">
-            Palabra general:
+          <p className="inline">
+            Title:
           </p>
           <input
             type="text"
             onChange={handleChangeForm}
-            name="generalSearch"
+            name="title"
             value={dataForm?.generalSearch}
-            className="block outline-none w-full h-8 pl-2 mb-2 rounded-md focus:ring-2 focus:ring-gray-500"
+            className="block outline-none w-full h-8 pl-2 my-2 rounded-md focus:ring-2 focus:ring-gray-500"
           />
         </div>
         <button className="w-24 h-8 rounded-md bg-red-700 text-white">Buscar</button>
