@@ -1,0 +1,167 @@
+{
+  "head": {
+    "vars": [
+      "tittle",
+      "alternative",
+      "creator",
+      "contributor",
+      "issued",
+      "date",
+      "abstract",
+      "issn",
+      "publisher",
+      "language",
+      "haspart"
+    ]
+  },
+  "results": {
+    "results": {
+      "bindings": [
+        {
+          "title": {
+            "type": "literal",
+            "value": "Hola a todos"
+          },
+          "alternative": {
+            "type": "literal",
+            "value": "Prueba_Documento"
+          },
+          "creator": {
+            "type": "literal",
+            "value": "Escarcha, Juanito"
+          },
+          "contributor": {
+            "type": "literal",
+            "value": "Escarcha, Juanito"
+          },
+          "issued": {
+            "type": "literal",
+            "value": "2000-01-01"
+          },
+          "date": {
+            "type": "literal",
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "value": "2022-03-29T15:32:06Z"
+          },
+          "abstract": {
+            "type": "literal",
+            "xml:lang": "en-US",
+            "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+          },
+          "issn": {
+            "type": "literal",
+            "value": "123456789"
+          },
+          "publisher": {
+            "type": "literal",
+            "value": "Norma"
+          },
+          "language": {
+            "type": "literal",
+            "value": "es"
+          },
+          "haspart": {
+            "type": "uri",
+            "value": "http://localhost:8080/jspui/bitstream/123456789/4/1/Carta%20de%20cancelaci%c3%b3n.pdf"
+          }
+        },
+        {
+          "title": {
+            "type": "Paper",
+            "value": "Adios a todos"
+          },
+          "alternative": {
+            "type": "literal",
+            "value": "Prueba_Documento1"
+          },
+          "creator": {
+            "type": "literal",
+            "value": "Landa, Lalo"
+          },
+          "contributor": {
+            "type": "literal",
+            "value": "Landa, Lalo"
+          },
+          "issued": {
+            "type": "literal",
+            "value": "2013-01-02"
+          },
+          "date": {
+            "type": "literal",
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "value": "2022-03-29T16:17:30Z"
+          },
+          "abstract": {
+            "type": "literal",
+            "xml:lang": "en-US",
+            "value": "On this screen you can specify some Dublin Core values that new submissions will have pre-filled out. Some of the values you can set here do not appear in the submission UI, so end-users may not have the chance to edit them. This can be a good or a bad thing! (FIXME?) Also note that these Dublin Core values will be added to items imported via the batch importer."
+          },
+          "issn": {
+            "type": "literal",
+            "value": "987654321"
+          },
+          "publisher": {
+            "type": "literal",
+            "value": "NormaV.2.0"
+          },
+          "language": {
+            "type": "literal",
+            "value": "it"
+          },
+          "haspart": {
+            "type": "uri",
+            "value": "http://localhost:8080/jspui/bitstream/123456789/5/1/logoUD.png"
+          }
+        },
+        {
+          "title": {
+            "type": "Hola",
+            "value": "Como van"
+          },
+          "alternative": {
+            "type": "literal",
+            "value": "Prueba_Documento"
+          },
+          "creator": {
+            "type": "literal",
+            "value": "Escarcha, Juanito"
+          },
+          "contributor": {
+            "type": "literal",
+            "value": "Escarcha, Juanito"
+          },
+          "issued": {
+            "type": "literal",
+            "value": "2000-01-01"
+          },
+          "date": {
+            "type": "literal",
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "value": "2022-03-29T15:32:06Z"
+          },
+          "abstract": {
+            "type": "literal",
+            "xml:lang": "en-US",
+            "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+          },
+          "issn": {
+            "type": "literal",
+            "value": "987526"
+          },
+          "publisher": {
+            "type": "literal",
+            "value": "Norma"
+          },
+          "language": {
+            "type": "literal",
+            "value": "es"
+          },
+          "haspart": {
+            "type": "uri",
+            "value": "http://localhost:8080/jspui/bitstream/123456789/4/1/Carta%20de%20cancelaci%c3%b3n.pdf"
+          }
+        }
+      ]
+    }
+  }
+}

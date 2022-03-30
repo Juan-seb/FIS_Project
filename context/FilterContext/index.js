@@ -78,7 +78,7 @@ const filtersArray = [
 const sectionArray = [
   {
     name:'Titles',
-    path: 'titles'
+    path: 'title'
   },  
   {
     name:'Creator',
@@ -86,7 +86,7 @@ const sectionArray = [
   },
   {
     name:'Issue Date',
-    path: 'date'
+    path: 'issued'
   },
 ]
 

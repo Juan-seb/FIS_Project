@@ -21,7 +21,6 @@ const FilterSearch = ({ handleSubmit }) => {
         [filter.name]: ''
       })
     })    
-
     /* return () => setFilters(dataFilters) */
 
   }, [])
