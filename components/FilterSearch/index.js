@@ -3,7 +3,7 @@ import useCollapse from 'react-collapsed'
 import FilterContext from 'context/FilterContext'
 
 const data = {
-  title: () => localStorage.getItem('search')
+  title: ''
 }
 
 const FilterSearch = ({ handleSubmit }) => {
@@ -15,12 +15,16 @@ const FilterSearch = ({ handleSubmit }) => {
 
   useEffect(() => {
 
+    let dataInForm = {...data, title: localStorage.getItem('search')}
+
     filters.forEach(filter => {
-      setDataForm({
-        ...dataForm,
+      
+      dataInForm = {
+        ...dataInForm,
         [filter.name]: ''
-      })
-    })    
+      }
+    })
+    setDataForm(dataInForm)
     /* return () => setFilters(dataFilters) */
 
   }, [])
@@ -104,7 +108,7 @@ const FilterSearch = ({ handleSubmit }) => {
             type="text"
             onChange={handleChangeForm}
             name="title"
-            value={dataForm?.generalSearch}
+            value={dataForm.title}
             className="block outline-none w-full h-8 pl-2 my-2 rounded-md focus:ring-2 focus:ring-gray-500"
           />
         </div>

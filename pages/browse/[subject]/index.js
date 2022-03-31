@@ -15,7 +15,7 @@ const Subject = ({ subject }) => {
   useEffect(() => {
 
     let url = process.env.NEXT_PUBLIC_STAGE === "development" ? process.env.NEXT_PUBLIC_REQUEST_URL_DEVELOPMENT : process.env.NEXT_PUBLIC_REQUEST_URL_PRODUCTION
-
+    console.log(url)
     fetch(url)
       .then(res => res.ok ? res.json() : Promise.reject(''))
       .then(json => {
@@ -70,9 +70,8 @@ const Subject = ({ subject }) => {
       {!loader && <Loader />}
       {data && section &&
         section.map((title, index) => {
-
+          console.log(data)
           const dataResponse = data
-          console.log(dataResponse)
           return (
             <PreviewData key={index} subject={subject} title={title} dataResponse={dataResponse} />
           )

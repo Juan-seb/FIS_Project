@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
 
       <section className="flex-1 my-4">
-        <article className="flex flex-col justify-center items-center w-5/6 px-2 mx-auto">
+        <article className="flex flex-col justify-center items-center w-5/6 px-2 m-auto h-full">
           <h1 className="text-2xl text-black mx-1 text-center font-semibold mb-2 hover:-2">
             Repositorio Institucional Universidad Distrital - Proyecto FIS
           </h1>
